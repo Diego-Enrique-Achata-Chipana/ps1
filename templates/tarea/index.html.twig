@@ -1,0 +1,29 @@
+{% extends 'layout/admin.html.twig' %}
+
+{% block title %}Tareas{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">N°:</th>
+                <th scope="col">Descripción:</th>
+                <th scope="col">Acciones:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, tarea in tareas %}
+                <tr>
+                    <th scope="row">{{index + 1}}</th>
+                    <td>{{tarea.descripcion}}</td>
+                    <td>
+                        <a href="/tarea/edit/{{tarea.id}}">Editar</a>
+                        <a href="/tarea/delete/{{tarea.id}}">Eliminar</a>
+                    </td>
+                </tr>
+            {% else %}    
+                <th scope="row">Sin datos</th>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

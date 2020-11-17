@@ -1,0 +1,25 @@
+{% extends 'layout/admin.html.twig' %}
+
+{% block title %}Post{% endblock %}
+{% block body %}
+<div class="container">
+    <form method="post" accept-charset="UTF-8">
+        {# {{ csrfInput() }} #}
+        <input type="hidden" name="action" value="users/login">
+    
+        <h3><label for="loginName">Username or email</label></h3>
+        <input id="loginName" type="text" name="loginName" class="form-control">
+    
+        <h3><label for="password">Password</label></h3>
+        <input id="password" type="password" name="password" class="form-control">
+    
+        <buttom class="btn btn-primary"type="submit" value="Login">Login</buttom>
+    
+        {% if errorMessage is defined %}
+            <p>{{ errorMessage }}</p>
+        {% endif %}
+    </form>
+    
+    <p><a href="#">Forgot your password?</a></p>
+</div>  
+{% endblock %}

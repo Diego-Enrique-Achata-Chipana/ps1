@@ -1,3 +1,28 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+post_index:
+    path: /post
+    controller: App\Controller\PostController::index
+    methods: GET
+
+tarea_index:
+    path: /tarea
+    controller: App\Controller\TareaController::index
+    methods: GET
+
+tarea_create:
+    path: /tarea/create
+    controller: App\Controller\TareaController::create
+    methods: POST
+
+tarea_edit:
+    path: /tarea/edit/{id}
+    controller: App\Controller\TareaController::edit
+    methods: POST
+
+tarea_delete:
+    path: /tarea/delete/{id}
+    controller: App\Controller\TareaController::delete
+    methods: POST

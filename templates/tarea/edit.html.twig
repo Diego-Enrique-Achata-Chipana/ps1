@@ -1,0 +1,15 @@
+{% extends 'layout/admin.html.twig' %}
+
+{% block title %}Tarea Create{% endblock %}
+
+{% block body %}
+<div class="container">
+    <form method="post" action="/tarea/edit/{{tarea.id}}">
+        <div class="form-group">
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" aria-describedby="emailHelp" value="{{tarea.descripcion}}">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+{% endblock %}
